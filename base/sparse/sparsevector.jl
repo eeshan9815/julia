@@ -956,7 +956,7 @@ vcat(X::Union{Vector,SparseVector}...) = vcat(map(sparse, X)...)
 # TODO: A definition similar to the third exists in base/linalg/bidiag.jl. These definitions
 # should be consolidated in a more appropriate location, e.g. base/linalg/special.jl.
 const _SparseArrays = Union{SparseVector, SparseMatrixCSC}
-const _SpecialArrays = Union{Diagonal, Bidiagonal, Tridiagonal, SymTridiagonal}
+const _SpecialArrays = Union{Diagonal, Bidiagonal, Tridiagonal, SymTridiagonal, RowVector}
 const _SparseConcatArrays = Union{_SpecialArrays, _SparseArrays}
 
 const _Symmetric_SparseConcatArrays{T,A<:_SparseConcatArrays} = Symmetric{T,A}
